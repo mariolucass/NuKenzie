@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+  --color-primary: #fd377e;
+  --color-primary2: #e34981;
+  --color-secondary: #03b898;
+
+  --grey-1: #f8f9fa;
+  --grey-2: #e9ecef;
+  --grey-3: #868e96;
+  --grey-4: #212529;
+}
+
+.mainContainer {
+  margin: 0px 0px 15px 15px;
+  margin: 0 auto;
+  font-family: "Inter", sans-serif;
+}
+
+.button1 {
+  border: none;
+  background-color: var(--color-primary);
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  font-size: 1rem;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+}
+
+.button1:hover {
+  background-color: var(--color-primary2);
+  color: var(--grey-1);
+}
+
+.button2 {
+  border: none;
+  background-color: var(--grey-2);
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  font-size: 1rem;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+}
+
+.leftForm {
+  width: 25%;
+}
+
+.mainContainer {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-around;
+}
