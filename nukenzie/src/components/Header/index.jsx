@@ -1,14 +1,16 @@
 import "./styles.css";
 
-export const Header = () => {
-  const HomePage = () => {};
+export const Header = (props) => {
+  const setHome = () => {
+    props.inicio(true);
+  };
 
   return (
     <header>
       <h1>
         <span className="spanHeader">Nu</span> Kenzie
       </h1>
-      <button className="button2" onClick={HomePage}>
+      <button className="button2" onClick={setHome}>
         Inicio
       </button>
     </header>

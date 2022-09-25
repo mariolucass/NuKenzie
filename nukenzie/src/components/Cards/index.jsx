@@ -2,9 +2,12 @@ import "./styles.css";
 
 export const Card = (props) => {
   console.log();
+
+  const removeCard = () => {};
+
   return (
     <li>
-      {props.transaction.type === "entrada" ? (
+      {props.transaction.type === "Entrada" ? (
         <div className="rectangle1"></div>
       ) : (
         <div className="rectangle2"></div>
@@ -17,7 +20,7 @@ export const Card = (props) => {
         </div>
         <div className="cardInteractions">
           <span>R$ {props.transaction.value},00</span>
-          <button className="button2 trashButton"></button>
+          <button className="button2 trashButton" onClick={removeCard}></button>
         </div>
       </div>
     </li>

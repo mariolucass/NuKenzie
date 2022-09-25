@@ -1,0 +1,71 @@
+h1 {
+  font-weight: bold;
+  font-size: 28px;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+h3 {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+h4 {
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.button1 {
+  border: none;
+  background-color: var(--color-primary);
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  font-size: 1rem;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+}
+
+.button1:hover {
+  background-color: var(--color-primary2);
+  color: var(--grey-1);
+  box-shadow: 1px 1px var(--color-primary), 2px 2px var(--color-primary),
+    3px 3px var(--color-primary);
+  -webkit-transform: translateX(-3px);
+  transform: translateX(-3px);
+}
+
+.button2 {
+  border: none;
+  background-color: var(--grey-2);
+  color: var(--text-button2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  font-size: 1rem;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+}
+
+.button2:hover {
+  background-color: var(--grey-3);
+  color: var(--grey-1);
+  box-shadow: 1px 1px var(--color-primary), 2px 2px var(--color-primary),
+    3px 3px var(--color-primary);
+  -webkit-transform: translateX(-3px);
+  transform: translateX(-3px);
+}
+
+.button2:active {
+  background-color: var(--color-primary);
+}

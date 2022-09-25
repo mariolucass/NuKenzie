@@ -6,23 +6,50 @@ import TotalMoney from "./components/TotalMoney";
 import { useState } from "react";
 
 function App() {
+  const [isInicio, setInicio] = useState(true);
+
   const [listTransactions, setListTransactions] = useState([
-    { description: "Salário recebido", type: "entrada", value: 2500 },
-    { description: "Conta de luz", type: "saída", value: -150 },
+    // { description: "Salário recebido", type: "Entrada", value: 2500 },
+    // { description: "Conta de luz", type: "Saída", value: -150 },
   ]);
 
+  const setPage = () => {
+    setInicio(false);
+  };
+
   return (
-    <div className="container">
-      <Header></Header>
-      <div className="mainContainer">
-        <div className="leftForm">
-          <Form function={setListTransactions}></Form>
-          <TotalMoney list={listTransactions}></TotalMoney>
+    <div>
+      {isInicio ? (
+        <div className="divInicio">
+          <div className="textInicio">
+            <h2>
+              <span className="spanText">Nu</span> Kenzie
+            </h2>
+            <h1>Centralize o controle das suas finanças</h1>
+            <span>de forma rápida e segura</span>
+            <button className="button1" onClick={setPage}>
+              Iniciar
+            </button>
+          </div>
+          <div className="illustration"></div>
         </div>
-        <div>
-          <List list={listTransactions}></List>
+      ) : (
+        <div className="container">
+          <Header inicio={setInicio}></Header>
+          <div className="mainContainer">
+            <div className="leftForm">
+              <Form setListTransactions={setListTransactions}></Form>
+              <TotalMoney list={listTransactions}></TotalMoney>
+            </div>
+            <div>
+              <List
+                list={listTransactions}
+                setListTransactions={setListTransactions}
+              ></List>
+            </div>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }

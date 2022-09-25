@@ -1,17 +1,53 @@
 ul {
+  width: 90%;
+  height: 200px;
+  overflow-y: auto;
   list-style: none;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
 }
 
-ul div {
+.divButtons {
+  padding: 1rem;
   display: flex;
-  gap: 1rem;
+  width: 85%;
+  gap: 0.2rem;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  position: sticky;
+  inset: 0%;
+  margin: 0 auto;
+  border-radius: 0 0 1rem 1rem;
+  background-color: #ffff;
+  box-shadow: var(--color-primary) 0px 0px 0px 3px;
 }
 
-.button1 {
-  width: 120px;
-  height: 48px;
+.button1,
+.divButtons .button2 {
+  width: calc(120px / 2);
+  height: calc(48px / 2);
+  font-size: 12px;
+}
+
+.noCard {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  background-image: url(../../assets/NoCard.svg);
+  background-repeat: no-repeat;
+}
+
+@media (min-width: 768px) {
+  ul {
+    height: 800px;
+    width: 100%;
+  }
+
+  .button1,
+  .divButtons .button2 {
+    width: 120px;
+    height: 48px;
+    font-size: 16px;
+  }
 }

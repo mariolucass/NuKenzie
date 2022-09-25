@@ -1,15 +1,18 @@
 import { useState } from "react";
 import "./styles.css";
 
-export const Form = (props) => {
+export const Form = ({ setListTransactions }) => {
   const [descricao, setDescricao] = useState("");
   const [valor, setValor] = useState("");
   const [tipo, setTipo] = useState("");
-  // const [itens, setItens] = useState([]);
 
   function handleSubmit(event) {
     event.preventDefault();
-    console.log(valor, descricao, tipo);
+
+    setListTransactions((listTransactions) => [
+      ...listTransactions,
+      { description: descricao, type: tipo, value: +valor },
+    ]);
   }
 
   return (
@@ -18,7 +21,7 @@ export const Form = (props) => {
 
       <input
         type="text"
-        placeholder=""
+        placeholder="Coloque a descrição aqui."
         onChange={(event) => setDescricao(event.target.value)}
       />
 
@@ -28,17 +31,17 @@ export const Form = (props) => {
           <label htmlFor="">Tipo de valor</label>
         </div>
         <div className="divIL">
-          {" "}
           <input
             type="text"
-            placeholder=""
+            placeholder="Coloque o Valor."
             onChange={(event) => setValor(event.target.value)}
           />
           <select
-            name=""
+            name="Selecione"
             id=""
             onChange={(event) => setTipo(event.target.value)}
           >
+            <option value="">Selecione</option>
             <option value="Entrada">Entrada</option>
             <option value="Saída">Saída</option>
           </select>

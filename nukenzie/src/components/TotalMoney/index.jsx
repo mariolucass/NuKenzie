@@ -1,10 +1,11 @@
 import "./styles.css";
 
 export const TotalMoney = (props) => {
-  console.log(props);
-  const total = props.list.reduce((e, acc) => e.value);
-  console.log(props.list.map((e) => e.value));
-  console.log(total);
+  const total = props.list
+    .map((e) => e.value)
+    .reduce((e, acc) => {
+      return e + acc;
+    }, 0);
 
   return (
     <div className="valorTotal">
