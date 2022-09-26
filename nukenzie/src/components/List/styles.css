@@ -12,9 +12,9 @@ ul li {
 }
 
 .divButtons {
-  padding: 1rem;
+  padding: 2rem;
   display: flex;
-  width: 85%;
+  width: 75%;
   gap: 0.2rem;
   justify-content: center;
   align-items: center;

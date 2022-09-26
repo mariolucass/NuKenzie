@@ -1,11 +1,11 @@
 form {
-  padding: 0.5rem;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
   border: 1px solid #e9ecef;
   border-radius: 1rem;
-  width: 90%;
+  width: 80%;
   margin: 0 auto;
 }
 
@@ -27,7 +27,7 @@ select {
 
 form div input,
 select {
-  width: 45%;
+  width: 200px;
 }
 
 .divIL {
@@ -39,4 +39,16 @@ select {
 
 form .button1 {
   width: 100%;
+}
+
+.inputPlace {
+  position: relative;
+  right: 20%;
+  top: 10px;
+}
+
+@media (min-width: 768px) {
+  .inputPlace {
+    right: 12%;
+  }
 }
