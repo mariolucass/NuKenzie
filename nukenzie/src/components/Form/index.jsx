@@ -8,11 +8,13 @@ export const Form = ({ setListTransactions }) => {
 
   function handleSubmit(event) {
     event.preventDefault();
+    let valorFinal = 0;
+    tipo === "Entrada" ? (valorFinal = +valor * 1) : (valorFinal = +valor * -1);
 
     descricao !== "" && tipo !== "" && valor !== "0"
       ? setListTransactions((listTransactions) => [
           ...listTransactions,
-          { description: descricao, type: tipo, value: +valor },
+          { description: descricao, type: tipo, value: valorFinal },
         ])
       : alert("Tente colocar um valor válido");
   }
@@ -35,7 +37,7 @@ export const Form = ({ setListTransactions }) => {
         <div className="divIL">
           <input
             type="text"
-            placeholder="Coloque o Valor."
+            placeholder=""
             onChange={(event) => setValor(event.target.value)}
           />
           <span className="inputPlace">R$</span>

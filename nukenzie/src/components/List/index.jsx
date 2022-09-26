@@ -3,9 +3,10 @@ import Card from "../Cards";
 import "./styles.css";
 
 export const List = (props) => {
-  const [listagem, setListagem] = useState();
+  const [listagem, setListagem] = useState(props.list);
   const [isFiltered, setFilter] = useState(false);
   const [text, setText] = useState("nenhum lançamento");
+  const listaAnterior = props.list;
 
   const lista = props.list.map((e, i) => (
     <Card transaction={e} key={i} setListagem={setListagem} />
@@ -14,9 +15,8 @@ export const List = (props) => {
   const setListAll = () => {
     setText("nenhum lançamento");
     setFilter(true);
-
     setListagem(
-      props.list.map((e, i) => (
+      listaAnterior.map((e, i) => (
         <Card transaction={e} key={i} setListagem={setListagem} />
       ))
     );
@@ -25,9 +25,8 @@ export const List = (props) => {
   const setListEntrada = () => {
     setText("nenhuma entrada");
     setFilter(true);
-
     setListagem(
-      props.list
+      listaAnterior
         .filter((e) => e.type !== "Saída")
         .map((e, i) => (
           <Card transaction={e} key={i} setListagem={setListagem} />
@@ -38,9 +37,8 @@ export const List = (props) => {
   const setListSaida = () => {
     setText("nenhuma saída");
     setFilter(true);
-
     setListagem(
-      props.list
+      listaAnterior
         .filter((e) => e.type !== "Entrada")
         .map((e, i) => (
           <Card transaction={e} key={i} setListagem={setListagem} />

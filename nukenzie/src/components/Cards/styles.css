@@ -68,7 +68,10 @@ li {
   background-position: center;
 }
 
-/* .trashButton img {
-  width: 90%;
-  height: 90%;
-} */
+.spanEntrada {
+  color: var(--color-secondary);
+}
+
+.spanSaida {
+  color: var(--color-terciary);
+}

@@ -30,7 +30,6 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: aparecer ease-in 4s;
 }
 
 .textInicio {
@@ -39,6 +38,7 @@ h2 {
   flex-direction: column;
   gap: 1rem;
   margin: 0 auto;
+  animation: showInicio ease-in 1s;
 }
 
 .textInicio h2 {
@@ -55,6 +55,7 @@ h2 {
   height: 600px;
   background-image: url(./assets/illustration.svg);
   background-repeat: no-repeat;
+  animation: showInicio ease-in 1s;
 }
 
 .mainContainer {
@@ -79,6 +80,7 @@ h2 {
   width: 100vw;
   height: 100vh;
   margin: 0 auto;
+  animation: showPage ease-in 0.5s;
 }
 
 @media (min-width: 768px) {
@@ -93,17 +95,20 @@ h2 {
 
 @keyframes showInicio {
   0% {
-    left: 0;
+    transform: scale(0);
+    opacity: 0%;
   }
   100% {
-    right: 0;
+    transform: scale(1);
   }
 }
 
 @keyframes showPage {
   0% {
+    transform: perspective(900px) rotateX(60deg) scale(0.7);
   }
 
   100% {
+    transform: scaleX(0px);
   }
 }

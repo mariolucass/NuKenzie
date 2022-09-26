@@ -1,15 +1,7 @@
 import "./styles.css";
 
 export const Card = (props) => {
-  const removeCard = () => {
-    props.setListagem(
-      props.list
-        .filter((e) => e.type !== "Entrada")
-        .map((e, i) => (
-          <Card transaction={e} key={i} setListagem={props.setListagem} />
-        ))
-    );
-  };
+  const removeCard = (index) => {};
 
   return (
     <li>
@@ -25,7 +17,11 @@ export const Card = (props) => {
           <span>{props.transaction.type}</span>
         </div>
         <div className="cardInteractions">
-          <span>R$ {props.transaction.value},00</span>
+          {props.transaction.type === "Entrada" ? (
+            <span className="spanEntrada">R$ {props.transaction.value},00</span>
+          ) : (
+            <span className="spanSaida">R$ {props.transaction.value},00</span>
+          )}
           <button className="button2 trashButton" onClick={removeCard}></button>
         </div>
       </div>
