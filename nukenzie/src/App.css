@@ -80,7 +80,7 @@ h2 {
   width: 100vw;
   height: 100vh;
   margin: 0 auto;
-  animation: showPage ease-in 0.5s;
+  /* animation: showPage ease-in 0.5s; */
 }
 
 @media (min-width: 768px) {

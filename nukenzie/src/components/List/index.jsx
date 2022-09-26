@@ -9,7 +9,13 @@ export const List = (props) => {
   const listaAnterior = props.list;
 
   const lista = props.list.map((e, i) => (
-    <Card transaction={e} key={i} setListagem={setListagem} />
+    <Card
+      transaction={e}
+      key={i}
+      id={i}
+      setListagem={setListagem}
+      list={props.list}
+    />
   ));
 
   const setListAll = () => {
@@ -17,7 +23,13 @@ export const List = (props) => {
     setFilter(true);
     setListagem(
       listaAnterior.map((e, i) => (
-        <Card transaction={e} key={i} setListagem={setListagem} />
+        <Card
+          transaction={e}
+          key={i}
+          id={i}
+          setListagem={setListagem}
+          list={listagem}
+        />
       ))
     );
   };
@@ -29,7 +41,13 @@ export const List = (props) => {
       listaAnterior
         .filter((e) => e.type !== "Saída")
         .map((e, i) => (
-          <Card transaction={e} key={i} setListagem={setListagem} />
+          <Card
+            transaction={e}
+            key={i}
+            id={i}
+            setListagem={setListagem}
+            list={listagem}
+          />
         ))
     );
   };
@@ -41,7 +59,13 @@ export const List = (props) => {
       listaAnterior
         .filter((e) => e.type !== "Entrada")
         .map((e, i) => (
-          <Card transaction={e} key={i} setListagem={setListagem} />
+          <Card
+            transaction={e}
+            key={i}
+            id={i}
+            setListagem={setListagem}
+            list={listagem}
+          />
         ))
     );
   };

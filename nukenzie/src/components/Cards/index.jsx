@@ -1,7 +1,9 @@
 import "./styles.css";
 
 export const Card = (props) => {
-  const removeCard = (index) => {};
+  const removeCard = (index) => {
+    props.setListagem(props.list.filter((e, i) => i !== props.id));
+  };
 
   return (
     <li>
