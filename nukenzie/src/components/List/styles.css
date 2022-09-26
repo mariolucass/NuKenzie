@@ -7,6 +7,10 @@ ul {
   padding: 0;
 }
 
+ul li {
+  animation: showCards 0.3s ease-out;
+}
+
 .divButtons {
   padding: 1rem;
   display: flex;
@@ -30,9 +34,16 @@ ul {
   font-size: 12px;
 }
 
+.divNoCard {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  width: 100%;
+}
+
 .noCard {
   display: flex;
-  height: 100%;
+  height: 400px;
   width: 100%;
   background-image: url(../../assets/NoCard.svg);
   background-repeat: no-repeat;
@@ -49,5 +60,17 @@ ul {
     width: 120px;
     height: 48px;
     font-size: 16px;
+  }
+}
+
+@keyframes showCards {
+  0% {
+    transform: translateX(400px);
+    opacity: 20%;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 100%;
   }
 }

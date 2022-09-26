@@ -1,9 +1,15 @@
 import "./styles.css";
 
 export const Card = (props) => {
-  console.log();
-
-  const removeCard = () => {};
+  const removeCard = () => {
+    props.setListagem(
+      props.list
+        .filter((e) => e.type !== "Entrada")
+        .map((e, i) => (
+          <Card transaction={e} key={i} setListagem={props.setListagem} />
+        ))
+    );
+  };
 
   return (
     <li>

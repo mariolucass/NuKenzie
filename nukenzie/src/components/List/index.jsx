@@ -3,25 +3,56 @@ import Card from "../Cards";
 import "./styles.css";
 
 export const List = (props) => {
-  const [listagem, setListagem] = useState(props.list);
+  const [listagem, setListagem] = useState();
+  const [isFiltered, setFilter] = useState(false);
+  const [text, setText] = useState("nenhum lançamento");
+
+  const lista = props.list.map((e, i) => (
+    <Card transaction={e} key={i} setListagem={setListagem} />
+  ));
 
   const setListAll = () => {
-    setListagem(props.list.map((e) => e));
+    setText("nenhum lançamento");
+    setFilter(true);
+
+    setListagem(
+      props.list.map((e, i) => (
+        <Card transaction={e} key={i} setListagem={setListagem} />
+      ))
+    );
   };
 
   const setListEntrada = () => {
-    setListagem(props.list.map((e) => e).filter((e) => e.type !== "Saída"));
+    setText("nenhuma entrada");
+    setFilter(true);
+
+    setListagem(
+      props.list
+        .filter((e) => e.type !== "Saída")
+        .map((e, i) => (
+          <Card transaction={e} key={i} setListagem={setListagem} />
+        ))
+    );
   };
 
   const setListSaida = () => {
-    setListagem(props.list.map((e) => e).filter((e) => e.type !== "Entrada"));
+    setText("nenhuma saída");
+    setFilter(true);
+
+    setListagem(
+      props.list
+        .filter((e) => e.type !== "Entrada")
+        .map((e, i) => (
+          <Card transaction={e} key={i} setListagem={setListagem} />
+        ))
+    );
   };
 
   return (
     <ul className="">
       <div className="divButtons">
         <h3>Resumo Financeiro</h3>
-        <button className="button1" onClick={setListAll}>
+        <button className="button2" onClick={setListAll}>
           Todos
         </button>
         <button className="button2" onClick={setListEntrada}>
@@ -32,9 +63,16 @@ export const List = (props) => {
         </button>
       </div>
       {props.list.length ? (
-        listagem.map((e, i) => <Card transaction={e} key={i} />)
+        isFiltered ? (
+          listagem
+        ) : (
+          lista
+        )
       ) : (
-        <div className="noCard"></div>
+        <div className="divNoCard">
+          <h3>Você ainda não possui {text}.</h3>
+          <div className="noCard"></div>
+        </div>
       )}
     </ul>
   );

@@ -54,7 +54,7 @@ li {
 
 .rectangle2 {
   width: 10px;
-  background-color: var(--grey-2);
+  background-color: var(--color-terciary);
   height: 100%;
   margin-right: 20px;
   border-radius: 4px 0px 0px 4px;
