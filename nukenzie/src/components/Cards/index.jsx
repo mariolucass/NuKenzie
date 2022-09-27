@@ -2,7 +2,7 @@ import "./styles.css";
 
 export const Card = (props) => {
   const removeCard = (index) => {
-    props.setListagem(props.list.filter((e, i) => i !== props.id));
+    props.setListagem(props.list.filter((e, i) => i !== index));
   };
 
   return (
@@ -24,7 +24,10 @@ export const Card = (props) => {
           ) : (
             <span className="spanSaida">R$ {props.transaction.value},00</span>
           )}
-          <button className="button2 trashButton" onClick={removeCard}></button>
+          <button
+            className="button2 trashButton"
+            onClick={() => removeCard(props.id)}
+          ></button>
         </div>
       </div>
     </li>

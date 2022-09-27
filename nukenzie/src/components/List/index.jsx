@@ -3,7 +3,7 @@ import Card from "../Cards";
 import "./styles.css";
 
 export const List = (props) => {
-  const [listagem, setListagem] = useState(props.list);
+  const [listagem, setListagem] = useState([]);
   const [isFiltered, setFilter] = useState(false);
   const [text, setText] = useState("nenhum lançamento");
   const listaAnterior = props.list;
@@ -13,39 +13,27 @@ export const List = (props) => {
       transaction={e}
       key={i}
       id={i}
-      setListagem={setListagem}
+      setListagem={props.setListTransactions}
       list={props.list}
     />
   ));
 
   const setListAll = () => {
-    setText("nenhum lançamento");
-    setFilter(true);
-    setListagem(
-      listaAnterior.map((e, i) => (
-        <Card
-          transaction={e}
-          key={i}
-          id={i}
-          setListagem={setListagem}
-          list={listagem}
-        />
-      ))
-    );
+    setFilter(false);
   };
 
   const setListEntrada = () => {
     setText("nenhuma entrada");
     setFilter(true);
     setListagem(
-      listaAnterior
+      props.list
         .filter((e) => e.type !== "Saída")
         .map((e, i) => (
           <Card
             transaction={e}
             key={i}
             id={i}
-            setListagem={setListagem}
+            setListagem={props.setListTransactions}
             list={listagem}
           />
         ))
@@ -63,7 +51,7 @@ export const List = (props) => {
             transaction={e}
             key={i}
             id={i}
-            setListagem={setListagem}
+            setListagem={props.setListTransactions}
             list={listagem}
           />
         ))

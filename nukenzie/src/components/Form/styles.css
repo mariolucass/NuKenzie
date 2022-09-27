@@ -49,6 +49,9 @@ form .button1 {
 
 @media (min-width: 768px) {
   .inputPlace {
-    right: 12%;
+    right: 42.5px;
   }
+}
+
+@media (min-width: 768px) {
 }
