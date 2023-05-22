@@ -13,7 +13,7 @@ Projeto de um site para gerenciamento financeiro, com suporte a diversos filtros
 Realize o clone do projeto:
 
 ```bash
-  git clone https://github.com/Kenzie-Academy-Brasil-Developers/react-entrega-s1-nu-kenzie-mariolucass-6.git
+  git clone https://github.com/mariolucass/NuKenzie.git
 ```
 
 Vá para o diretório do projeto:
